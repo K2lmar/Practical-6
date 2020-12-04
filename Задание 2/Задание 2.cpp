@@ -1,11 +1,26 @@
 ﻿// Задание 2.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
+using namespace std;
 #include <iostream>
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	const int N = 20;
+	int array[N] = { 1, -2, -3, 4, 5, -6, 7, -8, -9, 10,
+	               11, -12, -13, 14, -15, 16, 17,18, -19, 20};
+	{
+		for (int i = 0; i < N; i++)
+			cout << array[i] << " ";
+		{
+			for (int i = 0; i < N; i++)
+				if (array[i] < 0)
+					array[i] = 0;
+			for (int i = 0; i < N; i++)
+				cout << "\n" << array[i] << " ";
+		}
+		return 0;
+	}
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
