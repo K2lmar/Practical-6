@@ -1,23 +1,35 @@
-﻿// Задание 1.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// Задание 4.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 using namespace std;
 #include <iostream>
 
 int main()
 {
-    setlocale(0, "");
-    int array[10];
-	cout << "Введите элементы массива: \n";
-	for (int i = 0; i < 10; i++)
+	setlocale(0, "");
+	cout << "Введите количество элементов в массиве: \n";
+	size_t size, index;
+	cin >> size; 
+	bool status = false; 
+	int elem;
+	int* array = new int[size];
+	for (size_t i = 0; i < size; i++)
 	{
-		cout << "[" << i + 1 << "]" << " = ";
+		cout << "[" << i + 1 << "]" << ": ";
 		cin >> array[i];
+		if (status != true)
+		{
+			elem = array[0];
+			index = i;
+			status = true;
+		}
+		else if (elem > array[i])
+		{
+			elem = array[i];
+			index = i;
+		}
 	}
-	cout << "Массив: \n";
-	for (int i = 0; i < 10; i++)
-	{
-		cout << array[i] << " " << endl;
-	}
+	cout  << "Минимальный элемент: " << elem << endl;
+    cout  << "Индекс: " << index << endl;
 	return 0;
 }
 

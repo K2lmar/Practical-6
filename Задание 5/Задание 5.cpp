@@ -1,22 +1,53 @@
-﻿// Задание 1.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// Задание 5.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 using namespace std;
 #include <iostream>
 
 int main()
 {
-    setlocale(0, "");
-    int array[10];
-	cout << "Введите элементы массива: \n";
-	for (int i = 0; i < 10; i++)
+	setlocale(0, "");
+	int n, i, temp;
+	int kmax = 0, kmin = 0;
+	int array[10];
+	cout << "Введите количество элементов в массиве: ";
+	cin >> n;
+	cout << "Введите массив: \n";
+
+	for (int i = 0; i < n; i++) 
 	{
 		cout << "[" << i + 1 << "]" << " = ";
 		cin >> array[i];
 	}
-	cout << "Массив: \n";
-	for (int i = 0; i < 10; i++)
+
+	int max = array[0];
+	int min = array[0];
+
+	for (int i = 0; i < n; i++)
 	{
-		cout << array[i] << " " << endl;
+		if (max > array[i])
+		{
+			max = array[i];
+			kmax = i;
+		}
+
+
+		if (min < array[i])
+		{
+			min = array[i];
+			kmin = i;
+		}
+	}
+	temp = array[kmax];
+	array[kmax] = array[kmin];
+	array[kmin] = temp;
+
+	cout << "Максимальное число: " << min << endl;
+	cout << "Минимальное число: " << max << endl;
+
+	cout << "Массив после перестановки min и max числа: \n";
+	for (int i = 0; i < n; i++) 
+	{
+		cout << " " << array[i] << endl;
 	}
 	return 0;
 }

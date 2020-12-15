@@ -6,9 +6,11 @@ using namespace std;
 
 int main()
 {
+	setlocale(0, "");
 	const int N = 20;
+	cout << "Дан массив: \n";
 	int array[N] = { 1, -2, -3, 4, 5, -6, 7, -8, -9, 10,
-	               11, -12, -13, 14, -15, 16, 17,18, -19, 20};
+	               11, -12, -13, 14, -15, 16, 17, 18, -19, 20};
 	{
 		for (int i = 0; i < N; i++)
 			cout << array[i] << " ";
