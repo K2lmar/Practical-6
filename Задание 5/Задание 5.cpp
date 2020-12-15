@@ -30,7 +30,6 @@ int main()
 			kmax = i;
 		}
 
-
 		if (min < array[i])
 		{
 			min = array[i];
